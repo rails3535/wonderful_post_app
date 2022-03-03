@@ -25,7 +25,7 @@ class SampleArticlesController < ApplicationController
 
     respond_to do |format|
       if @sample_article.save
-        format.html { redirect_to sample_article_url(@sample_article), notice: "Sample article was successfully created." }
+        format.html { redirect_to sample_article_url(@sample_article), notice: "記事が作成されました" }
         format.json { render :show, status: :created, location: @sample_article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SampleArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @sample_article.update(sample_article_params)
-        format.html { redirect_to sample_article_url(@sample_article), notice: "Sample article was successfully updated." }
+        format.html { redirect_to sample_article_url(@sample_article), notice: "記事が更新されました" }
         format.json { render :show, status: :ok, location: @sample_article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class SampleArticlesController < ApplicationController
     @sample_article.destroy
 
     respond_to do |format|
-      format.html { redirect_to sample_articles_url, notice: "Sample article was successfully destroyed." }
+      format.html { redirect_to sample_articles_url, notice: "記事が削除されました" }
       format.json { head :no_content }
     end
   end

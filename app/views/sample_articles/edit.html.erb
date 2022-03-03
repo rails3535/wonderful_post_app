@@ -1,6 +1,7 @@
-<h1>Editing Sample Article</h1>
+<p><%= notice %></p>
+<h1>記事編集</h1>
 
 <%= render 'form', sample_article: @sample_article %>
 
-<%= link_to 'Show', @sample_article %> |
-<%= link_to 'Back', sample_articles_path %>
+<%= link_to '詳細', @sample_article %> |
+<%= link_to '記事一覧', sample_articles_path %>
