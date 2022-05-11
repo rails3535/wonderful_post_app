@@ -6,5 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :articles
 
-  attr_accessor :email
+  # attr_accessor :email
 end

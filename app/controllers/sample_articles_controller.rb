@@ -1,5 +1,5 @@
 class SampleArticlesController < ApplicationController
-  before_action :set_sample_article, only: %i[ show edit update destroy ]
+  # before_action :set_sample_article, only: %i[ show edit update destroy ]
 
   # GET /sample_articles or /sample_articles.json
   def index
