@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
      #↓以下追記
   def configure_permitted_parameters
-    added_attrs = [
+    added_attrs = [ :name,
                     :email,
                     :password,
                     :password_confirmation,

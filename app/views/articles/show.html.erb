@@ -13,3 +13,5 @@
 <% end %>
 <%= link_to '一覧', articles_path, class: "btn btn-secondary" %>
 <% if user_signed_in? && current_user.id == @article.user_id %>
+
+<%end%>
