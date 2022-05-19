@@ -2,10 +2,12 @@
 
 <div class="card">
   <div class="card-header">
+  <strong>タイトル:</strong>
     <%= @article.title %>
   </div>
   <div class="card-body">
-    <%= @article.content %>
+  <strong>本文:</strong>
+  <%= @article.content %>
   </div>
 </div>
 <% if current_user&.id == @article.user_id %>

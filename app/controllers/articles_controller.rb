@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ index show ]
   # before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :set_article, only: %i[ edit update destroy ]
+  before_action :set_article, only: %i[ show edit update destroy ]
   # GET /articles or /articles.json
   def index
     @articles = Article.all
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
       if @article.update(article_params)
-        redirect_to @article, notice: "記事を更新しました。"
+        redirect_to @article, notice: "記事を編集しました。"
       else
         render :edit, status: :unprocessable_entity
       end
