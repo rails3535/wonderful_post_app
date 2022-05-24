@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ index show ]
-  # before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[ edit update destroy ]
+
   # GET /articles or /articles.json
   def index
     @articles = Article.all
@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @articles = current_user.id
 
     # @article= current_user.articles.build
   end
