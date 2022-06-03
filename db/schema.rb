@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_04_06_162202) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
@@ -32,10 +32,8 @@ ActiveRecord::Schema.define(version: 2022_04_06_162202) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "group", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
