@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.all
+    # binding.pry
   end
 
   # GET /articles/1 or /articles/1.json
@@ -15,19 +16,19 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @articles = current_user.id
 
     # @article= current_user.articles.build
   end
 
   # GET /articles/1/edit
   def edit
+    # binding.pry
   end
 
   # POST /articles or /articles.json
   def create
       @article = current_user.articles.new(article_params)
-
-
       if @article.save
         redirect_to @article, notice: "新しい記事を投稿しました。"
       else
@@ -38,7 +39,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
       if @article.update(article_params)
-        redirect_to @article, notice: "記事を更新しました。"
+        redirect_to @article, notice: "記事を編集しました。"
       else
         render :edit, status: :unprocessable_entity
       end
@@ -48,12 +49,14 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     redirect_to articles_url, notice: "記事を削除しました。"
+    # binding.pry
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = current_user.articles.find(params[:id])
+      # binding.pry
     end
 
     # Only allow a list of trusted parameters through.

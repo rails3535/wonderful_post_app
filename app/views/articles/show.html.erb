@@ -2,15 +2,17 @@
 
 <div class="card">
   <div class="card-header">
+  <strong>タイトル:</strong>
     <%= @article.title %>
   </div>
   <div class="card-body">
-    <%= @article.content %>
-  </div>
- </div>
+  <strong>本文:</strong>
+  <%= @article.content %>
+</div>
+<% if current_user&.id == @article.user_id %>
+<%= link_to '編集', edit_article_path(@article), class: "btn btn-warning" %>
+<% end %>
+<%= link_to '一覧', articles_path, class: "btn btn-secondary" %>
+<% if user_signed_in? && current_user.id == @article.user_id %>
 
-
-  <% if current_user&.id == @article.user_id %>
-    <%= link_to '編集', edit_article_path(@article), class: "btn btn-warning" %>
-  <% end %>
-  <%= link_to '一覧', articles_path, class: "btn btn-secondary" %>
+<%end%>
