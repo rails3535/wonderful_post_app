@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_05_01_143020) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 

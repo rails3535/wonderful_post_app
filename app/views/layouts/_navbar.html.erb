@@ -4,8 +4,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <% if user_signed_in?%>
+         <li class="nav-item">
+            <%= link_to "マイページ", mypage_path, class: "nav-link active" %>
+          </li>
           <li class="nav-item">
-             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link active" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link active" %>
           </li>
 
           <% else %>
@@ -20,4 +23,4 @@
       </ul>
     </div>
   </div>
-</nav>
+ </nav>

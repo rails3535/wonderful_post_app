@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+ <p id="notice"><%= notice %></p>
 
 <div class="card">
   <div class="card-header">
@@ -8,7 +8,6 @@
   <div class="card-body">
   <strong>本文:</strong>
   <%= @article.content %>
-  </div>
 </div>
 <% if current_user&.id == @article.user_id %>
 <%= link_to '編集', edit_article_path(@article), class: "btn btn-warning" %>
