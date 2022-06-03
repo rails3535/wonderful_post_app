@@ -5,10 +5,11 @@
       <ul class="navbar-nav">
         <% if user_signed_in?%>
           <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link active" %>
-            data: { confirm: 'Are you sure?' }
+             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link active" %>
           </li>
-        <% else %>
+
+          <% else %>
+
           <li class="nav-item">
             <%= link_to "サインアップ", new_user_registration_path, class: "nav-link active" %>
           </li>
