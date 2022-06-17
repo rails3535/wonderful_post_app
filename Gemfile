@@ -38,6 +38,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
+  gem 'kaminari'
 end
 
 group :development do
