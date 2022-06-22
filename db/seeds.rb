@@ -9,3 +9,8 @@
     end
   end
 end
+
+Tag.create([
+  { name: '学習' },
+  { name: '転職活動' },
+])
